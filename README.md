@@ -1,7 +1,7 @@
 Supported tags and respective `Dockerfile` links
 ================================================
 
-[`latest` (Dockerfile)](https://github.com/arjentz/socks-docker/blob/main/Dockerfile)
+[`latest` (Dockerfile)](https://github.com/arjentz/docker-dante-socks/blob/main/Dockerfile)
 
 
 What is Dante
@@ -13,7 +13,7 @@ What is Dante
 Usage example
 -------------
 
-    $ docker run -d -p 1080:1080 arjentz/socks-docker
+    $ docker run -d -p 1080:1080 arjentz/dante-socks
 
 Change its configuration by mounting a custom `/etc/sockd.conf`
 (see [sample config files](http://www.inet.no/dante/doc/latest/config/server.html)).
@@ -37,7 +37,7 @@ like for example:
 
 The default config in this image allows everyone to use the proxy. You can add a simple authentication (which will send data unencrypted) by setting up a `Dockerfile` like:
 
-    FROM arjentz/socks-docker
+    FROM arjentz/dante-socks
 
     # TODO: Replace 'john' and 'MyPassword' by any username/password you want.
     RUN printf 'MyPassword\nMyPassword\n' | adduser john
@@ -58,4 +58,4 @@ WARNING: Many browsers do **not** support SOCKS authentication (e.g. see this [C
 Feedbacks
 ---------
 
-Suggestions are welcome on our [GitHub issue tracker](https://github.com/arjentz/socks-docker/issues).
+Suggestions are welcome on our [GitHub issue tracker](https://github.com/arjentz/docker-dante-socks/issues).
